@@ -24,7 +24,7 @@ o.setup = function(){
 o.draw = function (){  
   o.background('#E0AEE0'); 
   let randomwords = o.random(words);
-  o.text(randomwords, 0, 0, 820, 100); 
+  o.text(randomwords, o.width >> 1, 75); 
     }    
 }
 
