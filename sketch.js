@@ -4,12 +4,18 @@ let words = ["yoga", "taking a bath", "sitting outside", "eating a banana", "med
             ]
     
 o.setup = function(){
-  let cnv = o.createCanvas(820,150);
+
+  o.sketchWidth = document.getElementById("output").offsetWidth;
+  o.sketchHeight = document.getElementById("output").offsetHeight;
+  
+  let cnv = o.createCanvas(o.sketchWidth, o.sketchHeight);
+    
   cnv.parent('output');
   cnv.style('z-index','2');
   cnv.background(224, 174, 224, .0);
       
-  o.textFont("Righteous",54);
+  o.textFont("Righteous");
+  o.textSize(o.width / 15)
   o.textStyle(o.BOLD);
   o.textAlign (o.CENTER, o.CENTER);
   o.fill('#DAF7A6');
@@ -18,7 +24,7 @@ o.setup = function(){
   let button = o.createButton('no? what about this?')
   button.parent('output');
   button.mouseClicked(o.draw);
-    }
+}
 
     
 o.draw = function (){  
