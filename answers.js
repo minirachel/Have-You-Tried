@@ -4,12 +4,18 @@ let words = ["yoga", "taking a bath", "sitting outside", "eating a banana", "med
             ]
     
 o.setup = function(){
-  let cnv = o.createCanvas(820,150);
+  o.sketchWidth = document.getElementById("output").offsetWidth;
+  o.sketchHeight = document.getElementById("output").offsetHeight;
+  
+  let cnv = o.createCanvas(o.sketchWidth, o.sketchHeight);
+
   cnv.parent('output');
   cnv.style('z-index','2');
   cnv.background(224, 174, 224, .0);
+  // cnv.background('#FF0000');
       
-  o.textFont("Righteous",54);
+  o.textFont("Righteous");
+  o.textSize(o.width / 17);
   o.textStyle(o.BOLD);
   o.textAlign (o.CENTER, o.CENTER);
   o.fill('#DAF7A6');
@@ -21,11 +27,11 @@ o.setup = function(){
     }
 
     
-o.draw = function (){  
-  o.background('#E0AEE0'); 
-  let randomwords = o.random(words);
-  o.text(randomwords, 0, 0, 820, 100); 
-    }    
+  o.draw = function (){  
+    o.background('#E0AEE0'); 
+    let randomwords = o.random(words);
+    o.text(randomwords, o.sketchWidth/2, o.sketchHeight/2); 
+  }
 }
 
 
